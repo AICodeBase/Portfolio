@@ -2,10 +2,241 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/time.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-Nt9/EyNRRx1Hmc4ZlY8pDzgP4+hAz/BLKhzMnjGMkrLKX9m1I9Fp10iKjYutTWT2/Tzwfz+s3qM/XtQ8RHnf0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Tavern Hotel</title>
 </head>
+
+
+<header>
+  <div class="head">
+      <label>Clean,safe, exclusive & oceanic view Hotel in Surigao City, Philippines</label>
+      <h3>Hotel Tavern</h3>
+      <p>STAY & SPA HOTEL</p>
+      <nav>
+            <ul>
+                <li><a href="#offer">About Us</a></li>
+                <li><a href="/rooms">Rooms</a></li>
+                <li><a href="#footer">Contact</a></li>
+                <li><a href="/reservations">Admin <i class="fa fa-user"></i></a></li>
+            </ul>
+      </nav>
+  </div>
+</header>
+
 <body>
-<h1>My Website</h1>
-<p>hello everyone, I'm Ayanna Bianca M. Ilustre</p>
-</body>
+<div class="content">
+        <h2>Hotel Tavern</h2>
+        <p>Rich In History, Modern In Luxury</p>
+          <div class="time">
+          <i class="fa fa-clock-o"></i>
+          <span id="current-time"></span>
+          </div>
+
+</div>
+
+ <div class="popup">
+        <div class="popup-content">
+            <h1>x</h1>
+            <img class="pop" src="home.jpg"/>
+            <h2>Subscribe for 5% discount!</h2>
+            <p>"Experience the best of our hotel by subscribing to our newsletter today, and receive an exclusive 5% discount on your next booking!"</p>
+            <form action="/submit_email" method="POST">
+            <div class="newsletter">
+              <i class="sub-icon ri-mail-check-fill"></i>
+                <input type="email" placeholder="Enter Email" id="mail" name="email" required>
+                 <input type="submit" class="btn" value="Submit">
+              <i class="sub-icon ri-arrow-right-line"></i>
+            </div>
+          </form>
+        </div>
+    </div>
+
+<div class="offer" id="offer">
+      <div class="header">
+          <label class="description">Hotel Tavern</label>
+        <h2>Rooms & Unwind</h2>
+      </div>
+     <div class="container"></div>
+
+      <div class="service-box">
+                  <div class="img__wrap">
+                        <img class="img__img" src="resto.jpeg" />
+                        <h1>Resto</h1>
+                        <p class="img__description">Resto is a modern restaurant serving delicious cuisine in a comfortable atmosphere.</p>
+                  </div>
+
+
+                   <div class="img__wrap">
+                        <img class="img__img" src="reception.jpeg" />
+                        <h1>Reception</h1>
+                        <p class="img__description">Our hotel reception is designed to provide a warm and welcoming environment for our guests.</p>
+                  </div>
+
+                  <div class="img__wrap">
+                        <img class="img__img" src="conference.jpeg" />
+                        <h1>Conference</h1>
+                        <p class="img__description">The conference facilities offer state-of-the-art amenities and a professional setting for meetings, seminars, and corporate events.</p>
+                  </div>
+
+
+                   <div class="img__wrap">
+                        <img class="img__img" src="massage.jpg" />
+                        <h1>Relax</h1>
+                        <p class="img__description">Hotel massage service offers professional relaxation techniques to relieve stress and tension in your body, promoting calmness and improved circulation.</p>
+                  </div>
+
+      </div>
+
+    <div class="book-content">
+
+      <main>
+          <section class="rooms" data-aos="fade-right">
+              <img src="deluxe.jpg" alt="">
+              <div>
+                  <h5>Deluxe Room</h5>
+                  <p>A deluxe room is typically larger than a standard room and may offer additional amenities such as a minibar, in-room safe, and a seating area.</p>
+                  <a href="/rooms" class="btn">Book now</a>
+              </div>
+          </section>
+
+          <section class="rooms" data-aos="fade-left">
+              <img src="family.jpg" alt="">
+              <div>
+                  <h5>Family Room</h5>
+                  <p>A family room is designed to accommodate families with children, offering additional bedding arrangements such as bunk beds or a pull-out sofa.</p>
+                  <a href="/rooms" class="btn">Book now</a>
+              </div>
+          </section>
+
+          <section class="rooms" data-aos="fade-right">
+              <img src="single.jpg" alt="">
+              <div>
+                  <h5>Single Room</h5>
+                  <p>A single room is a cozy and comfortable space designed for one person, equipped with all the necessary amenities for a pleasant stay including a comfortable single bed, a writing desk with a chair, and an en-suite bathroom with a shower or bathtub. It is an ideal option for solo travelers who seek privacy and convenience at an affordable price.</p>
+                  <a href="/rooms" class="btn">Book now</a>
+              </div>
+          </section>
+      </main>
+    </div>
+</div>
+
+<div class="header">
+          <label class="description">Hotel Tavern</label>
+        <h2>News & Special Offers</h2>
+      </div>
+            <div class="container"></div>
+
+      <div class="news">
+
+                  <div class="news__img">
+                        <img class="img__img" src="award.jpeg" />
+                        <h1>Award Winning</h1>
+                        <p class="p">Experience the pinnacle of hospitality at our award-winning hotel, where impeccable service and luxurious amenities combine to create an unforgettable stay.</p>
+                        <a href="/rooms" class="btn">MORE INFO</a>
+                  </div>
+
+
+                   <div class="news__img">
+                        <img class="img__img" src="covid.jpeg" />
+                        <h1>Covid-19 Safe</h1>
+                        <p class="p">Experience peace of mind during your stay at our hotel, where we prioritize your health and safety with rigorous adherence to CDC guidelines.</p>
+                        <a href="/rooms" class="btn">MORE INFO</a>
+                  </div>
+
+                  <div class="news__img">
+                        <img class="img__img" src="direct.jpeg" />
+                        <h1>Why Book Direct?</h1>
+                        <p class="p">Experience exclusive perks and best rates when you book directly with our hotel, while enjoying personalized service and secure reservations.</p>
+                        <a href="/rooms" class="btn">MORE INFO</a>
+                  </div>
+      </div>
+
+
+    <footer class="footer-sec" id="footer">
+    <div class="main">
+      <div class="logo row">
+        <div class="footer-header">
+          <img src="logo.jpg" class="hotel" alt="">
+        </div>
+        <div class="logo-des">
+          <p>A tavern hotel is a type of lodging establishment that combines the features of a traditional tavern or pub with those of a hotel.</p>
+          <a href="#" class="btn-know">Know More</a>
+        </div>
+      </div>
+
+
+
+      <div class="office row">
+        <div class="footer-header">
+          <h3>Office</h3>
+        </div>
+
+        <div class="office-des">
+            <p><strong>Hotel Name:</strong> Tavern Hotel Surigao</p>
+            <p><strong>Email:</strong> info@tavernhotelsurigao.com</p>
+            <p><strong>Phone Number:</strong> +63 (86) 231-4567</p>
+            <p><strong>Address:</strong> 1234 Borromeo St, Surigao City, Surigao del Norte, 8400 Philippines</p>
+        </div>
+      </div>
+
+
+      <div class="link row">
+        <div class="footer-header">
+          <h3>Links</h3>
+        </div>
+
+        <div class="link-des">
+          <a href="/" class="footer-links">Home</a>
+          <a href="#offer" class="footer-links">About</a>
+          <a href="#offer" class="footer-links">Services</a>
+        </div>
+
+      </div>
+
+
+      <div class="newsletter row">
+        <div class="footer-header">
+          <h3>Newsletter</h3>
+        </div>
+        <div class="newsletter-des">
+          <form action="/submit_email" method="POST">
+            <div class="subscribe">
+              <i class="sub-icon ri-mail-check-fill"></i>
+                <input type="email" placeholder="Enter Email" id="email" name="email" required><br><br>
+                 <input type="submit" class="btn" value="Submit">
+              <i class="sub-icon ri-arrow-right-line"></i>
+            </div>
+          </form>
+          <div class="icons">
+            <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+    <hr>
+    <p>Copyright &copy; Ilustredev2023</p>
+    </div>
+  </footer>
+        <script src="staticFiles/js/popup.js"></script>
+        <script src="staticFiles/js/time.js"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init({offset: 400, duration: 1000});</script>
+   </body>
 </html>
+
